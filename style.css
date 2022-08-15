@@ -3,23 +3,12 @@ body {
   font-family: monospace;
 }
 
-.btn {
-  /* prevent selection of text: it's annoying */
-  user-select: none;
-}
-.btn:hover {
-  cursor: pointer;
-}
-
-.btn:active {
-  filter: saturate(150%);
-}
-
 .atmContainer {
-  border: solid black;
+  border: 5px solid rgba(63, 39, 100, 0.645);
   margin: 2em;
-  background-color: lightslategrey;
+  background-color: #778899;
   margin: auto;
+  max-width: 900px;
 }
 @media (min-width: 929px) {
   .atmContainer {
@@ -28,12 +17,14 @@ body {
     --scaler: 4vw;
     font-size: 1.3em; fallback if clamp fails
     font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)); */
-    max-width: 70%;
+    /* max-width: 70%;
+     */
+    /* width: 100em; */
   }
 }
 @media (min-width: 561px) {
   .atmContainer {
-    max-width: 70%;
+    /* max-width: 70%; */
     margin: auto;
   }
 }
@@ -44,14 +35,21 @@ body {
   }
 }
 
+/* major (top-level) divisions */
 .atmTitle {
-  font-size: 7em;
+  position: relative;
+  font-size: 8vh;
   text-align: center;
   letter-spacing: 1em;
   padding-left: 1em;
   color: hsl(131, 100%, 45%);
-  border: solid white;
-  border-width: 8px;
+  border: inset #232f;
+  border-bottom: solid black;
+  border-width: 4px;
+  filter: blur(1.9px);
+  transform: scale(101%);
+  top: -4px;
+  height: 10vh;
 }
 
 .atmBody {
@@ -59,19 +57,36 @@ body {
   grid-template-columns: 20% 60% 20%;
   justify-content: space-around;
   gap: 10px;
-  border: solid blue;
-  padding: 2em;
+  /* border: solid blue; */
+  padding: 1em 2em 1em 2em;
   height: 35vh;
   margin: 0.2em;
 }
 
-/* atmBody direct descendants */
-.atmBody > div {
-  border: solid pink;
-  /* width: 100%; */
-  /* margin: 0;
-  padding: 0; */
+.balContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.3em;
+  background-color: inherit;
+  filter: brightness(80%);
+  height: 5vh;
+  border-top: solid #fff9;
+  border-bottom: solid #fff9;
 }
+
+.divKeys {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 39vh;
+  padding: 0 0 1em 0;
+}
+/* end major divisions */
+
+
+/* atmBody direct descendants */
 .btnLeftContainer {
   display: flex;
   flex-direction: column;
@@ -83,10 +98,13 @@ body {
   border-radius: 22px;
   padding: 3em;
   text-align: left;
-  /* i don't understand why this margin-left was necessary */
-  margin-left: 5px;
-  background-color: black;
+  background-image: url("./images/ATM.jpg");
+  background-color: #333c3f;
+  margin: 0 0 .5em 5px;
+  filter: grayscale(50%) opacity(50%);
+  overflow-y: hidden;
 }
+
 .btnRightContainer {
   display: flex;
   flex-direction: column;
@@ -94,58 +112,53 @@ body {
 }
 /* end atmBody direct descendants */
 
+.screenInside {
+  height: 90%;
+  filter: opacity(150%);
+  overflow-y: hidden;
+}
+
 .atmBody button {
   user-select: none;
   align-items: flex-start;
-}
-.atmBody button:hover {
-  cursor: pointer;
-}
-.atmBody button:active {
-  filter: saturate(150%);
-}
-
-.btnFn {
   margin: 0.4em;
   margin-top: 6vh;
   text-align: center;
-  border: solid black;
-  color: white;
-  background-color: #333c3f;
+  font-weight: bold;
+  border: solid #0004;
+  color: #000a;
+  background-color: #8090a0;
+  border-radius: 8px;
+  height: 2.5em;
 }
-.btnFn:hover {
-  margin: 0.2em;
-  margin-top: 6vh;
+.atmBody button:hover {
+  cursor: pointer;
   text-align: center;
-  border: solid black;
-  color: white;
-  background-color: green;
+  filter: hue-rotate(90deg);
+  transform: scale(101%);
+}
+.atmBody button:active {
+  filter: blur(2px) saturate(150%);
+
 }
 
-/* keypad & slot section */
-.divEntry {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 35vh;
-  border: solid yellowgreen;
-}
 
 .keyPad {
   display: grid;
   grid: 1.5em 1.5em 1.5em / repeat(3, 80px);
-  gap: 0.5em;
-  row-gap: 2em;
+  gap: 2em;
+  row-gap: 3em;
   padding: 1em;
-  border: solid black;
+  border: solid #1116;
+  background-color: #779999;
+  margin: 2em 0 0 0;
 }
 
 .keys {
   border: solid black;
   border-radius: 12px;
   width: 80px;
-  height: 2.5em;
+  height: 2.8em;
   color: white;
   background-color: #333c3f;
   text-align: center;
@@ -162,28 +175,34 @@ body {
 }
 
 .cardSlot {
-  border: solid black;
-  background-color: green;
+  border: solid #0004;
+  background-color: #77aa9944;
   margin: 1em;
-  width: 33%;
-
+  width: 40%;
+  height: 1.8em;
+  line-height: 1.8em;
   text-align: center;
   color: white;
 }
-.cardSlot:hover {
+  .cardSlot:hover {
+  cursor: pointer;
   border: solid black;
   background-color: #333c3f;
   /* margin: 3em; */
   text-align: center;
   color: white;
 }
-.scrn2 {
-  /* border:solid white; */
-  height: 45px;
-  margin-top: 50%;
+.cardSlot:active {
+  filter: opacity(50%);
 }
-.balContainer {
-  display: flex;
-  justify-content: space-evenly;
-  border: solid orangered;
+
+
+
+hr {
+  display: none;
+  margin: 0;
+}
+
+.acctnVal {
+  color: hsl(51, 100%, 50%);
 }

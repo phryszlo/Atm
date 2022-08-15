@@ -20,7 +20,7 @@
         </div>
 
         <div class="screen">
-          <!-- <button class="scrn2"></button> -->
+          <div class="screenInside"></div>
         </div>
 
         <div class="btnRightContainer">
@@ -32,11 +32,17 @@
       <!--  -->
       <hr />
       <div class="balContainer">
-        <p class="acctn">Checking Account:</p>
-        <p class="acctn">Savings Account:</p>
+        <p class="acctn">Checking Account:
+          <p class="acctnVal">0.00</p>
+        </p>
+        <p class="acctn">Savings Account:
+          <p class="acctnVal">0.00</p>
+        </p>
       </div>
+      <hr />
+
       <!--  -->
-      <div class="divEntry">
+      <div class="divKeys">
         <div class="keyPad">
           <button class="keys">1</button>
           <button class="keys">2</button>
@@ -54,7 +60,7 @@
           <button class="keys">0</button>
           <button class="keys">ENTER</button>
         </div>
-        <div class="cardSlot" onclick="">Insert Card</div>
+        <div class="cardSlot" onclick="insertCardClick">Insert Card</div>
       </div>
     </div>
 
