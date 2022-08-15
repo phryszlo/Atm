@@ -1,0 +1,189 @@
+body {
+  background-color: lightblue;
+  font-family: monospace;
+}
+
+.btn {
+  /* prevent selection of text: it's annoying */
+  user-select: none;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:active {
+  filter: saturate(150%);
+}
+
+.atmContainer {
+  border: solid black;
+  margin: 2em;
+  background-color: lightslategrey;
+  margin: auto;
+}
+@media (min-width: 929px) {
+  .atmContainer {
+    /* --minFontSize: 0.8em;
+    --maxFontSize: 1.2em;
+    --scaler: 4vw;
+    font-size: 1.3em; fallback if clamp fails
+    font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)); */
+    max-width: 70%;
+  }
+}
+@media (min-width: 561px) {
+  .atmContainer {
+    max-width: 70%;
+    margin: auto;
+  }
+}
+@media (max-width: 560px) {
+  .atmContainer {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.atmTitle {
+  font-size: 7em;
+  text-align: center;
+  letter-spacing: 1em;
+  padding-left: 1em;
+  color: hsl(131, 100%, 45%);
+  border: solid white;
+  border-width: 8px;
+}
+
+.atmBody {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  justify-content: space-around;
+  gap: 10px;
+  border: solid blue;
+  padding: 2em;
+  height: 35vh;
+  margin: 0.2em;
+}
+
+/* atmBody direct descendants */
+.atmBody > div {
+  border: solid pink;
+  /* width: 100%; */
+  /* margin: 0;
+  padding: 0; */
+}
+.btnLeftContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.screen {
+  border: solid white;
+  color: lemonchiffon;
+  border-radius: 22px;
+  padding: 3em;
+  text-align: left;
+  /* i don't understand why this margin-left was necessary */
+  margin-left: 5px;
+  background-color: black;
+}
+.btnRightContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+/* end atmBody direct descendants */
+
+.atmBody button {
+  user-select: none;
+  align-items: flex-start;
+}
+.atmBody button:hover {
+  cursor: pointer;
+}
+.atmBody button:active {
+  filter: saturate(150%);
+}
+
+.btnFn {
+  margin: 0.4em;
+  margin-top: 6vh;
+  text-align: center;
+  border: solid black;
+  color: white;
+  background-color: #333c3f;
+}
+.btnFn:hover {
+  margin: 0.2em;
+  margin-top: 6vh;
+  text-align: center;
+  border: solid black;
+  color: white;
+  background-color: green;
+}
+
+/* keypad & slot section */
+.divEntry {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 35vh;
+  border: solid yellowgreen;
+}
+
+.keyPad {
+  display: grid;
+  grid: 1.5em 1.5em 1.5em / repeat(3, 80px);
+  gap: 0.5em;
+  row-gap: 2em;
+  padding: 1em;
+  border: solid black;
+}
+
+.keys {
+  border: solid black;
+  border-radius: 12px;
+  width: 80px;
+  height: 2.5em;
+  color: white;
+  background-color: #333c3f;
+  text-align: center;
+}
+.keys:hover {
+  filter: brightness(200%);
+  /* drop-shadow(2px 2px #449); */
+}
+.keys:active {
+  size: 120%;
+  border-color: #0000; /*invisible border that doesn't change the box size*/
+  filter: blur(3px) brightness(150%);
+  /* transform: scale(110%); */
+}
+
+.cardSlot {
+  border: solid black;
+  background-color: green;
+  margin: 1em;
+  width: 33%;
+
+  text-align: center;
+  color: white;
+}
+.cardSlot:hover {
+  border: solid black;
+  background-color: #333c3f;
+  /* margin: 3em; */
+  text-align: center;
+  color: white;
+}
+.scrn2 {
+  /* border:solid white; */
+  height: 45px;
+  margin-top: 50%;
+}
+.balContainer {
+  display: flex;
+  justify-content: space-evenly;
+  border: solid orangered;
+}
